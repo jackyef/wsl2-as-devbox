@@ -34,6 +34,8 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     wsl --shutdown docker-desktop-data
     ```
 
+---
+
 ### Allow incoming SSH connection from the local network into the WSL distro
 > Source: https://medium.com/@gilad215/ssh-into-a-wsl2-host-remotely-and-reliabley-578a12c91a2
 
@@ -83,6 +85,8 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     - Press Win+R on Windows and enter shell:startup. This will open the Startup folder. Right click and create a new Shortcut.
     - Target: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command “C:\scripts\wsl-ports.ps1”
     - Try running the shortcut to make sure it works. Make sure to adjust the path to the script accordingly.
+
+---
 
 ### Installing Docker
 - [Install Docker on Windows with WSL2 backend](https://docs.docker.com/desktop/install/windows-install/)
