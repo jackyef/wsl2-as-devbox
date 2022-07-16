@@ -125,3 +125,7 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     ```
 
 7. Start Docker desktop again, everything should work.
+
+
+### What if I want to work outside of home?
+Use [Tailscale](https://tailscale.com/) and set up the 2 devices in the same network. With this, you can simply update the IP address for SSH temporarily and still access your dev server from anywhere, as long as both devices are connected to the internet.
