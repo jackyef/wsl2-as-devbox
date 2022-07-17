@@ -97,18 +97,19 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     ```powershell
     wsl -l -v
 
-    # There should be `docker` and `docker-desktop-data` WSL instances in the output
+    # There should be `docker-desktop` and `docker-desktop-data` WSL instances in the output
+    # We only care about moving `docker-desktop-data`
     ```
 
 2. Quit Docker (right click Docker icon on tray, quit Docker)
 
 3. Shutdown the WSL instances
     ```powershell
-    wsl --shutdown docker
+    wsl --shutdown docker-desktop
     wsl --shutdown docker-desktop-data
     ```
 
-4. Export `docker-desktop-data`
+4. Export `docker-desktop-data`. This is where containers and images data will reside in.
     ```powershell
     wsl --export docker-desktop-data E:\Docker\wsl\data\docker-desktop-data.tar 
     # Replace the directory as needed. This will be the directory where Docker's images and data are stored
