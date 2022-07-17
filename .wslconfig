@@ -1,0 +1,14 @@
+# Settings apply across all Linux distros running on WSL 2
+# Can see memory in wsl2 with "free -m"
+# Put this file in windows home directory as .wslconfig
+# e.g.: C:\Users\UserName\.wslconfig
+[wsl2]
+
+# Limits VM memory to use no more than 12 GB, defaults to 50% of ram
+memory=12GB
+
+# Sets the VM to use 8 virtual processors
+processors=8
+
+# Sets the amount of swap storage space to 2GB, default is 25% of available RAM
+swap=2GB
