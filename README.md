@@ -1,6 +1,22 @@
 # wsl2-as-devbox
 Personal note on setting up WSL 2 as a development server
 
+## Motivation
+Some reasons why you might want to do this:
+
+1. You have a beefy PC, but less-powerful laptop
+   
+    Say you already have a powerful PC, you can leverage your PC resources while working from your, say, Chromebook.
+
+2. You like working from a Mac, but have some relatively heavy Docker workloads
+   
+    File system performance on Docker for Mac has always been behind Docker for Linux. There is a [long-running issue](https://github.com/docker/for-mac/issues/1592) here that eventually became [a roadmap item](https://github.com/docker/roadmap/issues/7) here.
+
+For me, I have a pretty good gaming PC (i5-12400, 32GB RAM, EVO 970 Plus NVMe SSD) and a pretty good MacBook as well. Though I have heavy Docker use in my daily works and running Docker on my MacBook is just not pleasant. RAM usages are high and anytime something that involves I/O read/write happens in the containers (think hot reloads, builds/compilations), things will slow down. The fans in my MacBook would constantly be spinning. 
+
+Offloading Docker to my Windows PC makes a lot of sense for my case, as I am not using my PC anyway during work hours. My MacBook fans now no longer spins in my daily work and everything simply runs much more smoothly now. Sure, I could've just worked directly on the PC, but I prefer MacBook's hardware and the OS and softwares available on the platform helps my productivity.
+
+
 ## Steps
 
 Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
@@ -80,12 +96,15 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
      ```sh
      ssh wsluser@windows.ip -p 2222
      ```
+   Note: Replace `wsluser` with the username you created for the WSL distro. Replace `windows.ip` with the IP address assigned to your Windows PC in your local network. 
 
 8. The `./setup-ssh.ps1` script would need to be re-run whenever the WSL is restarted, because it would be assigned a different IP. We can automate running this script whenever the windows machine boot by doing the following:
     - Press Win+R on Windows and enter shell:startup. This will open the Startup folder. Right click and create a new Shortcut.
     - Target: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command “C:\scripts\wsl-ports.ps1”
     - Try running the shortcut to make sure it works. Make sure to adjust the path to the script accordingly.
-
+   
+    Note that this only runs the script whenever Windows restarts, not when the WSL restarts. If you restart WSL manually, remember to re-run the script as well.
+ 
 ---
 
 ### Installing Docker
