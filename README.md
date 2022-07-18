@@ -16,6 +16,7 @@ For me, I have a pretty good gaming PC (i5-12400, 32GB RAM, EVO 970 Plus NVMe SS
 
 Offloading Docker to my Windows PC makes a lot of sense for my case, as I am not using my PC anyway during work hours. My MacBook fans now no longer spins in my daily work and everything simply runs much more smoothly now. Sure, I could've just worked directly on the PC, but I prefer MacBook's hardware and the OS and softwares available on the platform helps my productivity.
 
+Even if you don't need Docker, this setup might still benefit you if you already have a beefy PC. You'd be able to leverage your powerful PC while still be able to work from anywhere using your less-powerful laptop as long as both devices are connected to the internet.
 
 ## Steps
 
