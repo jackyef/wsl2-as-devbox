@@ -1,5 +1,5 @@
 # wsl2-as-devbox
-Personal note on setting up WSL 2 as a development server
+Personal note on setting up WSL2 as a development server
 
 ## Motivation
 Some reasons why you might want to do this:
@@ -155,3 +155,7 @@ See the sample [`.wslconfig` file](./.wslconfig)
 
 ### What if I want to work outside of home?
 Use [Tailscale](https://tailscale.com/) and set up the 2 devices in the same network. With this, you can simply update the IP address for SSH temporarily and still access your dev server from anywhere, as long as both devices are connected to the internet.
+
+```shell
+ssh wsluser@windows.ip.in.tailscale.network -p 2222 
+```
