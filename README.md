@@ -69,7 +69,7 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     service ssh start
     ```
 
-6. On the Windows machine, run the [`./setup-ssh.ps1`](./setup-ssh.ps1) script. This will allow the windows machine to forward incoming SSH connection to the WSL distro.
+6. On the Windows machine, run the [`./ssh-setup.ps1`](./ssh-setup.ps1) script. This will allow the windows machine to forward incoming SSH connection to the WSL distro.
 
 7. Verify that SSH is working by running the following commands:
    - From windows machine, try SSH-ing into WSL
