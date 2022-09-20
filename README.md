@@ -43,14 +43,6 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     ```powershell
     wsl --import Ubuntu E:\WSL\Ubuntu\Ubuntu  E:\WSL\Ubuntu\ubuntu.tar --version 2
     ```
-
-5. Ensure `docker-desktop-data` and `docker` WSL instances already exists
-
-6. Shut down the current running WSL
-    ```powershell
-    wsl --shutdown docker-desktop-data
-    ```
-
 ---
 
 ### Allow incoming SSH connection from the local network into the WSL distro
