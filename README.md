@@ -146,6 +146,14 @@ To limit the amount of memory used by WSL instances, we can configure it by crea
 
 See the sample [`.wslconfig` file](./.wslconfig)
 
+### Solving `permission denied` issues
+When using VSCode with WSL integration, the user used is the default-set WSL user. If you are working with Docker and are running some scripts in the container that create some files/directories, those files/directories might be created with the `root` user.
+When trying to delete the file from VSCode, you might get `permission denied` error because of this. A solution would be to go into the container and update the owner of those files/directories.
+
+```sh
+sudo chown -R username path 
+```
+
 ### What if I want to work outside of home?
 Use [Tailscale](https://tailscale.com/) and set up the 2 devices in the same network. With this, you can simply update the IP address for SSH temporarily and still access your dev server from anywhere, as long as both devices are connected to the internet.
 
