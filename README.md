@@ -66,14 +66,25 @@ Before doing anything, first [install WSL2 on Windows 10/11 machine](https://ubu
     PasswordAuthentication yes
     ```
 
-4. Allow starting `ssh` service without password
+4. Add your user to `sudo` group and run the `ssh` service for the first time
+   ```sh
+   sudo adduser <username> sudo
+   sudo service ssh start
+   ```
+
+5. Next, we want to allow starting `ssh` service next time without password
     ```sh
-    /etc/sudoers.d/
-    %sudo ALL=NOPASSWD: /usr/sbin/service ssh *
+    nano /etc/sudoers.d/<username>
+
+    # Put the following line in the file
+    <username> ALL=(ALL) NOPASSWD:ALL
     ```
 
-5. Start SSH service
+5. Try stopping and then starting the SSH service, it should work without asking for password
     ```sh
+    # stop the service
+    service ssh stop
+
     # start the service
     service ssh start
     ```
